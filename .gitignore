@@ -1,0 +1,28 @@
+# Gradle / build
+.gradle/
+build/
+/captures
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+output-metadata.json
+
+# Local configuration (never commit: contains SDK paths / secrets)
+local.properties
+keystore.properties
+signing.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+google-services.json
+play-service-account*.json
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+.kotlin/
