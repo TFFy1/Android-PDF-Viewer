@@ -9,6 +9,7 @@ import io.github.tffy1.pdfviewer.data.repository.RecentDocumentsRepository
 import io.github.tffy1.pdfviewer.data.settings.SettingsRepository
 import io.github.tffy1.pdfviewer.io.DocumentAccess
 import io.github.tffy1.pdfviewer.pdf.PdfEngine
+import io.github.tffy1.pdfviewer.pdf.ThumbnailStore
 import io.github.tffy1.pdfviewer.pdf.pdfium.PdfiumEngine
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -29,4 +30,5 @@ class AppContainer(context: Context) {
 
     val documentAccess: DocumentAccess by lazy { DocumentAccess(appContext) }
     val pdfEngine: PdfEngine by lazy { PdfiumEngine(appContext, documentAccess) }
+    val thumbnailStore: ThumbnailStore by lazy { ThumbnailStore(appContext, pdfEngine) }
 }
