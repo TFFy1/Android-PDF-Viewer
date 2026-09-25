@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Viewer screen chrome, sheets and dialogs. Owner: viewer-screen feature. -->
+<resources>
+    <string name="viewer_loading">Opening document…</string>
+    <string name="viewer_saving">Saving…</string>
+
+    <!-- Page indicator: current page / page count -->
+    <string name="viewer_page_indicator">%1$d / %2$d</string>
+    <string name="viewer_page_indicator_description">Page %1$d of %2$d</string>
+    <string name="viewer_page_number">Page %1$d</string>
+    <string name="viewer_page_scrubber">Page scrubber</string>
+    <string name="viewer_current_page">Current page</string>
+
+    <!-- Top bar -->
+    <string name="viewer_search">Search</string>
+    <string name="viewer_bookmark_add">Bookmark this page</string>
+    <string name="viewer_bookmark_remove">Remove bookmark</string>
+    <string name="viewer_menu_go_to_page">Go to page…</string>
+    <string name="viewer_menu_contents">Contents</string>
+    <string name="viewer_menu_pages">Pages</string>
+    <string name="viewer_menu_bookmarks">Bookmarks</string>
+    <string name="viewer_menu_reading_mode">Reading mode</string>
+    <string name="viewer_menu_scroll_direction">Scroll direction</string>
+    <string name="viewer_menu_annotate">Annotate</string>
+    <string name="viewer_menu_save_annotated_copy">Save annotated copy…</string>
+    <string name="viewer_menu_print">Print</string>
+    <string name="viewer_menu_open_with">Open with…</string>
+    <string name="viewer_menu_save_copy">Save a copy…</string>
+    <string name="viewer_menu_properties">Properties</string>
+
+    <!-- Reading mode / scroll direction -->
+    <string name="viewer_reading_mode_normal">Normal</string>
+    <string name="viewer_reading_mode_night">Night</string>
+    <string name="viewer_reading_mode_sepia">Sepia</string>
+    <string name="viewer_scroll_vertical">Vertical (continuous)</string>
+    <string name="viewer_scroll_horizontal">Horizontal (page by page)</string>
+
+    <!-- Go to page -->
+    <string name="viewer_go_to_page_title">Go to page</string>
+    <string name="viewer_go_to_page_label">Page number</string>
+    <string name="viewer_go_to_page_range">Between 1 and %1$d</string>
+    <string name="viewer_go_to_page_invalid">Enter a number between 1 and %1$d</string>
+    <string name="viewer_go">Go</string>
+
+    <!-- Password -->
+    <string name="viewer_password_title">Password required</string>
+    <string name="viewer_password_message">This document is protected. Enter its password to open it.</string>
+    <string name="viewer_password_label">Password</string>
+    <string name="viewer_password_wrong">Incorrect password. Try again.</string>
+    <string name="viewer_password_show">Show password</string>
+    <string name="viewer_password_hide">Hide password</string>
+
+    <!-- Errors -->
+    <string name="viewer_error_not_found_title">File not found</string>
+    <string name="viewer_error_not_found_message">The file may have been moved, renamed or deleted.</string>
+    <string name="viewer_error_no_permission_title">Access to this file was lost</string>
+    <string name="viewer_error_no_permission_message">The app no longer has permission to read this file. Open it again from the file picker to restore access.</string>
+    <string name="viewer_error_corrupt_title">Can\'t open this PDF</string>
+    <string name="viewer_error_corrupt_message">The file is damaged or isn\'t a valid PDF document.</string>
+    <string name="viewer_error_other_message">The document couldn\'t be opened.</string>
+    <string name="viewer_error_details">Details: %1$s</string>
+
+    <!-- Contents (TOC) sheet -->
+    <string name="viewer_contents_empty">This document has no table of contents.</string>
+    <string name="viewer_contents_error">Couldn\'t load the table of contents.</string>
+    <string name="viewer_contents_expand">Expand %1$s</string>
+    <string name="viewer_contents_collapse">Collapse %1$s</string>
+
+    <!-- Bookmarks sheet -->
+    <string name="viewer_bookmark_default_title">Page %1$d</string>
+    <string name="viewer_bookmarks_empty_title">No bookmarks yet</string>
+    <string name="viewer_bookmarks_empty_message">Tap the bookmark icon in the top bar to bookmark the page you are reading.</string>
+    <string name="viewer_bookmark_rename_title">Rename bookmark</string>
+    <string name="viewer_bookmark_name_label">Name</string>
+    <string name="viewer_bookmark_rename_description">Rename %1$s</string>
+    <string name="viewer_bookmark_delete_description">Delete %1$s</string>
+
+    <!-- Copies -->
+    <string name="viewer_annotated_file_suffix">annotated</string>
+    <string name="viewer_copy_saved">Copy saved</string>
+    <string name="viewer_annotated_copy_saved">Annotated copy saved</string>
+    <string name="viewer_save_failed">Couldn\'t save the file</string>
+    <string name="viewer_no_app_for_action">No app available to complete this action</string>
+</resources>
