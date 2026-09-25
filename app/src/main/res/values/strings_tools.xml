@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings for the PDF tools (ui/tools, tools). Owner: tools agent. -->
+<resources>
+    <!-- Tool list -->
+    <string name="tools_title">Tools</string>
+    <string name="tools_privacy_note">Everything happens on your device. Files are never uploaded, and originals are never changed.</string>
+    <string name="tools_merge_title">Merge PDFs</string>
+    <string name="tools_merge_description">Combine several PDFs into one file</string>
+    <string name="tools_split_title">Split PDF</string>
+    <string name="tools_split_description">Divide a PDF into several files</string>
+    <string name="tools_extract_title">Extract pages</string>
+    <string name="tools_extract_description">Save selected pages as a new PDF</string>
+    <string name="tools_organize_title">Organize pages</string>
+    <string name="tools_organize_description">Rotate, reorder and delete pages</string>
+    <string name="tools_images_title">Images to PDF</string>
+    <string name="tools_images_description">Turn photos and images into a PDF</string>
+    <string name="tools_compress_title">Compress PDF</string>
+    <string name="tools_compress_description">Make a file smaller by shrinking its images</string>
+    <string name="tools_remove_password_title">Remove password</string>
+    <string name="tools_remove_password_description">Save an unlocked copy of a protected PDF</string>
+    <string name="tools_add_password_title">Add password</string>
+    <string name="tools_add_password_description">Protect a PDF with a password</string>
+
+    <!-- Input files -->
+    <string name="tools_section_file">File</string>
+    <string name="tools_section_files">Files</string>
+    <string name="tools_section_options">Options</string>
+    <string name="tools_choose_pdf">Choose a PDF</string>
+    <string name="tools_add_pdfs">Add PDFs</string>
+    <string name="tools_change_file">Change</string>
+    <string name="tools_remove_item">Remove %1$s</string>
+    <string name="tools_move_up">Move %1$s up</string>
+    <string name="tools_move_down">Move %1$s down</string>
+    <string name="tools_reading_file">Reading…</string>
+    <string name="tools_file_locked">Password protected</string>
+    <string name="tools_file_wrong_password">Incorrect password</string>
+    <string name="tools_file_unreadable">Can\'t open this file</string>
+    <string name="tools_unlock">Unlock</string>
+    <string name="tools_file_details">%1$s · %2$s</string>
+    <plurals name="tools_page_count">
+        <item quantity="one">%d page</item>
+        <item quantity="other">%d pages</item>
+    </plurals>
+    <string name="tools_no_picker">No app is available to choose files.</string>
+
+    <!-- Password dialog / fields -->
+    <string name="tools_password_dialog_title">Enter password</string>
+    <string name="tools_password_dialog_message">“%1$s” is password protected.</string>
+    <string name="tools_password_label">Password</string>
+    <string name="tools_password_show">Show password</string>
+    <string name="tools_password_hide">Hide password</string>
+    <string name="tools_password_incorrect">Incorrect password. Try again.</string>
+
+    <!-- Running / result -->
+    <string name="tools_working">Working…</string>
+    <string name="tools_progress_percent">%1$d%%</string>
+    <string name="tools_done_title">Done</string>
+    <string name="tools_start_over">Start over</string>
+    <string name="tools_dismiss">Dismiss</string>
+    <string name="tools_error_title">Couldn\'t finish</string>
+    <string name="tools_result_unprotected">The new file isn\'t password protected.</string>
+    <string name="tools_output_details">%1$s · %2$s</string>
+
+    <!-- Errors -->
+    <string name="tools_error_password_required">“%1$s” needs a password.</string>
+    <string name="tools_error_wrong_password">The password for “%1$s” is incorrect.</string>
+    <string name="tools_error_cannot_read">Couldn\'t read “%1$s”. It may be damaged or no longer available.</string>
+    <string name="tools_error_cannot_write">Couldn\'t write the new file. Check that there is enough free space and try again.</string>
+    <string name="tools_error_not_encrypted">This PDF isn\'t password protected.</string>
+    <string name="tools_error_owner_password">This PDF\'s permissions don\'t allow removing its protection. Enter the owner password instead.</string>
+    <string name="tools_error_nothing_to_compress">Nothing to compress: this PDF has no images that can be made smaller. No file was saved.</string>
+    <string name="tools_error_out_of_memory">This file is too large to process on this device.</string>
+    <string name="tools_error_unexpected">Something went wrong: %1$s</string>
+
+    <!-- Page ranges -->
+    <string name="tools_ranges_label">Pages</string>
+    <string name="tools_ranges_placeholder">e.g. 1-3, 5, 8-</string>
+    <string name="tools_range_error_empty">Enter pages, for example 1-3, 5, 8-</string>
+    <string name="tools_range_error_invalid">“%1$s” isn\'t a valid page or range</string>
+    <string name="tools_range_error_out_of_range">Page %1$s is out of range (1–%2$d)</string>
+    <string name="tools_range_error_reversed">%1$d-%2$d goes backwards. Did you mean %2$d-%1$d?</string>
+
+    <!-- Merge -->
+    <string name="tools_merge_hint">Add two or more PDFs. They are joined in the order shown.</string>
+    <string name="tools_merge_total">Total: %1$s</string>
+    <string name="tools_merge_action">Merge and save</string>
+
+    <!-- Split -->
+    <string name="tools_split_mode_every">Every N pages</string>
+    <string name="tools_split_mode_ranges">Custom ranges</string>
+    <string name="tools_split_every_label">Pages per file</string>
+    <string name="tools_split_every_invalid">Enter a number from 1 to %1$d</string>
+    <string name="tools_split_ranges_help">Each range becomes its own file.</string>
+    <plurals name="tools_split_preview">
+        <item quantity="one">Creates %d file</item>
+        <item quantity="other">Creates %d files</item>
+    </plurals>
+    <string name="tools_split_folder_note">You\'ll choose a folder for the new files.</string>
+    <string name="tools_split_action">Choose folder and split</string>
+
+    <!-- Extract -->
+    <string name="tools_extract_help">Pages are saved in the order you enter them.</string>
+    <plurals name="tools_extract_preview">
+        <item quantity="one">%d page selected</item>
+        <item quantity="other">%d pages selected</item>
+    </plurals>
+    <string name="tools_extract_action">Extract and save</string>
+
+    <!-- Organize -->
+    <string name="tools_organize_hint">Tap pages to select them, then rotate, move or delete them.</string>
+    <plurals name="tools_organize_selected">
+        <item quantity="one">%d selected</item>
+        <item quantity="other">%d selected</item>
+    </plurals>
+    <string name="tools_organize_select_all">Select all</string>
+    <string name="tools_organize_clear_selection">Clear selection</string>
+    <string name="tools_organize_rotate_left">Rotate left</string>
+    <string name="tools_organize_rotate_right">Rotate right</string>
+    <string name="tools_organize_move_earlier">Move earlier</string>
+    <string name="tools_organize_move_later">Move later</string>
+    <string name="tools_organize_delete">Delete selected pages</string>
+    <string name="tools_organize_reset">Undo all changes</string>
+    <string name="tools_organize_page">Page %1$d</string>
+    <string name="tools_organize_page_rotated">Page %1$d, rotated %2$d degrees</string>
+    <string name="tools_organize_all_deleted">All pages are deleted. Undo changes to start again.</string>
+    <string name="tools_save">Save</string>
+
+    <!-- Images to PDF -->
+    <string name="tools_images_hint">Each image becomes a page, in the order shown.</string>
+    <string name="tools_images_add_photos">Photos</string>
+    <string name="tools_images_add_files">Files</string>
+    <plurals name="tools_images_count">
+        <item quantity="one">%d image</item>
+        <item quantity="other">%d images</item>
+    </plurals>
+    <string name="tools_images_page_size">Page size</string>
+    <string name="tools_images_size_a4">A4</string>
+    <string name="tools_images_size_letter">Letter</string>
+    <string name="tools_images_size_fit">Fit image</string>
+    <string name="tools_images_margins">Margins</string>
+    <string name="tools_margin_none">None</string>
+    <string name="tools_margin_small">Small</string>
+    <string name="tools_margin_large">Large</string>
+    <string name="tools_images_quality">Image quality</string>
+    <string name="tools_quality_low">Low</string>
+    <string name="tools_quality_medium">Medium</string>
+    <string name="tools_quality_high">High</string>
+    <string name="tools_quality_low_help">Smallest file, fine for reading on screen.</string>
+    <string name="tools_quality_medium_help">Good balance of quality and size.</string>
+    <string name="tools_quality_high_help">Sharpest images, larger file.</string>
+    <string name="tools_images_action">Create PDF</string>
+
+    <!-- Compress -->
+    <string name="tools_compress_level">Compression</string>
+    <string name="tools_compress_strong">Strong</string>
+    <string name="tools_compress_balanced">Balanced</string>
+    <string name="tools_compress_light">Light</string>
+    <string name="tools_compress_strong_help">Smallest file. Images may look soft.</string>
+    <string name="tools_compress_balanced_help">Good for sharing and reading on screen.</string>
+    <string name="tools_compress_light_help">Keeps images sharp enough for printing.</string>
+    <string name="tools_compress_explainer">Images inside the PDF are re-saved at a lower resolution. Text and drawings are not changed.</string>
+    <string name="tools_compress_action">Compress and save</string>
+    <string name="tools_compress_result">%1$s → %2$s (%3$d%% smaller)</string>
+    <string name="tools_compress_result_no_original">New size: %1$s</string>
+    <plurals name="tools_compress_images">
+        <item quantity="one">%d image compressed</item>
+        <item quantity="other">%d images compressed</item>
+    </plurals>
+
+    <!-- Remove password -->
+    <string name="tools_remove_password_field">Current password</string>
+    <string name="tools_remove_password_help">The password used to open the file. If the file only restricts printing or editing, enter its owner password.</string>
+    <string name="tools_remove_password_action">Remove password and save</string>
+
+    <!-- Add password -->
+    <string name="tools_add_password_field">New password</string>
+    <string name="tools_add_password_confirm">Confirm password</string>
+    <string name="tools_add_password_mismatch">Passwords don\'t match</string>
+    <string name="tools_add_password_too_short">Use at least %1$d characters</string>
+    <string name="tools_add_password_warning">Keep this password safe. It can\'t be recovered if you forget it.</string>
+    <string name="tools_add_password_permissions">Permissions</string>
+    <string name="tools_permission_print">Allow printing</string>
+    <string name="tools_permission_copy">Allow copying text and images</string>
+    <string name="tools_permission_modify">Allow editing pages</string>
+    <string name="tools_permission_annotate">Allow comments and form filling</string>
+    <string name="tools_add_password_owner">Owner password (optional)</string>
+    <string name="tools_add_password_owner_help">Needed to change the permissions later. If left empty, a random one is used.</string>
+    <string name="tools_add_password_same_owner">The owner password must be different from the password.</string>
+    <string name="tools_add_password_encryption">Encrypted with AES-256.</string>
+    <string name="tools_add_password_action">Protect and save</string>
+</resources>
