@@ -39,6 +39,21 @@
                 <data android:scheme="content" />
                 <data android:scheme="file" />
                 <data android:mimeType="application/pdf" />
+                <data android:mimeType="application/x-pdf" />
+            </intent-filter>
+
+            <!--
+              Some mail, chat and download apps label PDFs as generic binaries. We only register
+              for application/octet-stream (not */* with a ".pdf" pathPattern: content:// paths
+              rarely carry the file name, and */* would list the app for every file type).
+              IncomingIntents.extractPdfUri() then accepts the file only if its name ends in .pdf.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/octet-stream" />
             </intent-filter>
 
             <!-- Shared to the app -->

@@ -25,7 +25,7 @@ An ad-free, tracker-free, offline PDF reader and toolkit for Android, published 
 | Navigation | Navigation Compose with type-safe `@Serializable` routes | Apache-2.0 |
 | DI | Manual `AppContainer` (no framework) | — |
 
-Build: AGP 9 (built-in Kotlin), Gradle 9, compileSdk/targetSdk 36, minSdk 26, JDK 17 bytecode.
+Build: AGP 9 (built-in Kotlin), Gradle 9, compileSdk 37, targetSdk 36, minSdk 26, JDK 17 bytecode.
 The build is verified by GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Package layout (`io.github.tffy1.pdfviewer`)

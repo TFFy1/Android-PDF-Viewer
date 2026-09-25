@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Share, print, "Open with", save a copy, document properties, incoming intents. -->
+<resources>
+    <string name="integration_share_chooser_title">Share PDF</string>
+    <string name="integration_open_with_chooser_title">Open with</string>
+
+    <string name="integration_error_unsupported_file">Can\'t open this file. Only PDF documents are supported.</string>
+    <string name="integration_error_no_access">The app no longer has access to this file. Open it again from its original location.</string>
+    <string name="integration_error_no_app">No app found to handle this</string>
+    <string name="integration_error_share">Couldn\'t share this file</string>
+    <string name="integration_error_open_with">Couldn\'t open this file in another app</string>
+    <string name="integration_error_print">Couldn\'t print this file</string>
+    <string name="integration_error_print_unavailable">Printing isn\'t available on this device</string>
+
+    <string name="integration_properties_title">Document properties</string>
+    <string name="integration_properties_empty">No information available</string>
+    <string name="integration_properties_file_name">File name</string>
+    <string name="integration_properties_size">Size</string>
+    <string name="integration_properties_pages">Pages</string>
+    <string name="integration_properties_document_title">Title</string>
+    <string name="integration_properties_author">Author</string>
+    <string name="integration_properties_subject">Subject</string>
+    <string name="integration_properties_keywords">Keywords</string>
+    <string name="integration_properties_creator">Created with</string>
+    <string name="integration_properties_producer">PDF producer</string>
+    <string name="integration_properties_created">Created</string>
+    <string name="integration_properties_modified">Modified</string>
+</resources>
