@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose)
@@ -8,7 +10,7 @@ plugins {
 
 // Release signing is read from environment variables (CI secrets) or an untracked
 // keystore.properties file. Nothing secret is ever committed to this public repo.
-val keystoreProperties = java.util.Properties().apply {
+val keystoreProperties = Properties().apply {
     val file = rootProject.file("keystore.properties")
     if (file.exists()) file.inputStream().use { load(it) }
 }
