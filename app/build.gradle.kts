@@ -22,6 +22,10 @@ fun signingValue(envName: String, propName: String): String? =
 val releaseStoreFile = signingValue("PDFVIEWER_KEYSTORE_FILE", "storeFile")
 val hasReleaseSigning = releaseStoreFile != null && file(releaseStoreFile).exists()
 
+// Release builds get their version from the git tag (see .github/workflows/release.yml).
+val ciVersionCode = providers.environmentVariable("PDFVIEWER_VERSION_CODE").orNull?.toIntOrNull()
+val ciVersionName = providers.environmentVariable("PDFVIEWER_VERSION_NAME").orNull?.takeIf { it.isNotBlank() }
+
 android {
     namespace = "io.github.tffy1.pdfviewer"
     compileSdk = 37
@@ -30,8 +34,8 @@ android {
         applicationId = "io.github.tffy1.pdfviewer"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = ciVersionCode ?: 1
+        versionName = ciVersionName ?: "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }

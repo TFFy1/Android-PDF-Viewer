@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Android 11 and lower. Back up settings and the library database only. -->
+<!-- Android 11 and lower. Backs up settings (files/datastore) and the database; skips caches and exports. -->
 <full-backup-content>
-    <exclude domain="file" path="." />
+    <exclude domain="file" path="thumbnails/" />
+    <exclude domain="file" path="exports/" />
     <exclude domain="external" path="." />
 </full-backup-content>

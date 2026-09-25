@@ -1,0 +1,46 @@
+version: 2
+
+updates:
+  # Gradle dependencies and plugins (gradle/libs.versions.toml, Gradle wrapper).
+  - package-ecosystem: gradle
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps"
+    groups:
+      # Kotlin, the Compose compiler plugin and KSP must move together.
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin:*"
+          - "org.jetbrains.kotlin.*"
+          - "com.google.devtools.ksp*"
+      kotlinx:
+        patterns:
+          - "org.jetbrains.kotlinx:*"
+      android-gradle-plugin:
+        patterns:
+          - "com.android.*"
+      androidx:
+        patterns:
+          - "androidx.*"
+      # PDF engines get their own PRs (no group) so each upgrade is reviewed and
+      # its R8 rules in app/proguard-rules.pro re-checked.
+      test:
+        patterns:
+          - "junit*"
+
+  # Pinned GitHub Actions versions in .github/workflows.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: "ci"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

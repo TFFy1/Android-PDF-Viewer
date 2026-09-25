@@ -1,0 +1,65 @@
+name: Bug report
+description: Something doesn't work as expected.
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+        **Security problems:** please don't file them here. Report them privately as described in [SECURITY.md](https://github.com/TFFy1/Android-PDF-Viewer/security/policy).
+        **Privacy:** never attach PDFs or screenshots that contain personal or confidential information.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the problem, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a PDF from ...
+        2. Tap ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: Shown in Settings > About.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Where did you install the app from?
+      options:
+        - Google Play
+        - GitHub Releases (APK)
+        - Built from source
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+      placeholder: "Pixel 8, Android 16"
+    validations:
+      required: true
+  - type: textarea
+    id: document
+    attributes:
+      label: About the PDF (if relevant)
+      description: |
+        Does it happen with every PDF or only one? Is it password-protected, scanned, very large, or made by a specific program?
+        If you can share a PDF that reproduces the problem, make sure it contains nothing private.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Crash log or other details
+      description: If the app crashed and you can capture a log (e.g. `adb logcat`), paste the relevant part here. Remove anything personal first.
+      render: text

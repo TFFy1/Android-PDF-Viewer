@@ -1,0 +1,5 @@
+First release of PDF Viewer: a private, offline PDF reader with no ads and no tracking.
+• Smooth scrolling and paging, sharp zoom, outline, thumbnails and search
+• Text selection, highlights, ink, sticky notes and bookmarks
+• Merge, split, rotate, reorder, compress, images to PDF
+• Night and sepia modes, dark theme and dynamic colors

@@ -1,0 +1,52 @@
+A fast, clean PDF reader for Android that respects your privacy. No ads, no tracking, no account, and no internet access at all: the app does not even request the internet permission. Your documents never leave your device unless you choose to share them.
+
+PDF Viewer is free and open source. Anyone can read the code and check exactly what it does.
+
+READ COMFORTABLY
+• Continuous vertical scrolling or page-by-page horizontal paging
+• Pinch and double-tap zoom with sharp, high-resolution rendering
+• Page indicator and scrubber, go to page, thumbnails grid
+• Table of contents (document outline) navigation
+• Internal links jump to the right page; web links always ask before opening
+• Night and sepia reading modes, light and dark themes, Material You dynamic colors
+• Fullscreen reading, keep screen on, turn pages with the volume keys
+• Picks up where you left off in every document
+• Opens password-protected PDFs
+
+FIND AND SELECT
+• Full-text search with highlighted results
+• Long-press to select text, then copy or share it
+
+ANNOTATE
+• Highlight, underline and strike through text
+• Freehand ink drawing and sticky notes
+• Eraser and undo
+• Your original file is never modified: annotations are kept in the app until you export an annotated copy with standard PDF annotations that other readers can display
+
+ORGANIZE
+• Recent documents and favorites
+• Add folders to your library to find all their PDFs in one place
+• Per-document bookmarks
+
+PDF TOOLS
+• Merge several PDFs into one
+• Split a PDF or extract pages
+• Rotate, reorder and delete pages
+• Turn images into a PDF
+• Remove a password from a PDF you know the password for
+• Compress PDFs
+Tools always write a new file and never overwrite the original.
+
+SHARE AND PRINT
+• Open PDFs from your file manager, email or any app with "Open with" or "Share"
+• Share, print, save a copy, view document properties
+
+PRIVACY BY DESIGN
+• No internet permission: the app cannot send anything anywhere
+• No ads, no analytics, no crash reporting services, no third-party trackers
+• No broad storage permission: the app only opens the files and folders you pick
+• Your recent files, bookmarks, annotations and settings stay on your device
+
+FREE AND OPEN SOURCE
+The source code is available on GitHub. Bug reports and contributions are welcome:
+https://github.com/TFFy1/Android-PDF-Viewer

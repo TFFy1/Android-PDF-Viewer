@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest an idea or an improvement.
+labels: [ "enhancement" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Please check existing issues first to avoid duplicates.
+        Note that this app deliberately has **no internet access, no ads and no tracking**, so features that need a network connection or an account are out of scope.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation where you miss this feature.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds you've considered
+  - type: checkboxes
+    id: offline
+    attributes:
+      label: Scope
+      options:
+        - label: This feature works fully offline and doesn't need new permissions.
