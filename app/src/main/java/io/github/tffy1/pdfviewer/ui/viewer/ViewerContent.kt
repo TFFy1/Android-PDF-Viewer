@@ -127,7 +127,9 @@ internal fun ViewerContent(
     var externalLink by rememberSaveable { mutableStateOf<String?>(null) }
     var renaming by remember { mutableStateOf<BookmarkEntity?>(null) }
 
-    val viewState = rememberDocumentViewState(document.pageSizes, initialPage = viewModel.currentPage.value)
+    // Read once: the page only seeds the view state; afterwards the view state drives the ViewModel.
+    val initialPage = remember(document) { viewModel.currentPage.value }
+    val viewState = rememberDocumentViewState(document.pageSizes, initialPage = initialPage)
     val snackbarHostState = remember { SnackbarHostState() }
     val focusRequester = remember { FocusRequester() }
 
