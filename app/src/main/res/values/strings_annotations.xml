@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar -->
+    <string name="annotations_toolbar">Annotation tools</string>
+    <string name="annotations_tool_ink">Pen</string>
+    <string name="annotations_tool_note">Note</string>
+    <string name="annotations_tool_eraser">Eraser</string>
+    <string name="annotations_colors">Colors</string>
+    <string name="annotations_stroke_width">Stroke width</string>
+    <string name="annotations_stroke_thin">Thin</string>
+    <string name="annotations_stroke_medium">Medium</string>
+    <string name="annotations_stroke_thick">Thick</string>
+    <string name="annotations_undo">Undo</string>
+    <string name="annotations_done">Done</string>
+
+    <!-- Color palette sections -->
+    <string name="annotations_color_section_ink">Pen</string>
+    <string name="annotations_color_section_note">Notes</string>
+    <string name="annotations_color_section_highlight">Highlight</string>
+    <string name="annotations_color_section_underline">Underline</string>
+    <string name="annotations_color_section_strikeout">Strikethrough</string>
+
+    <!-- Color names (for accessibility) -->
+    <string name="annotations_color_yellow">Yellow</string>
+    <string name="annotations_color_green">Green</string>
+    <string name="annotations_color_cyan">Cyan</string>
+    <string name="annotations_color_pink">Pink</string>
+    <string name="annotations_color_orange">Orange</string>
+    <string name="annotations_color_lavender">Lavender</string>
+    <string name="annotations_color_black">Black</string>
+    <string name="annotations_color_red">Red</string>
+    <string name="annotations_color_blue">Blue</string>
+    <string name="annotations_color_dark_green">Dark green</string>
+    <string name="annotations_color_deep_orange">Deep orange</string>
+    <string name="annotations_color_purple">Purple</string>
+    <string name="annotations_color_custom">Custom color</string>
+
+    <!-- Notes -->
+    <string name="annotations_note_new_title">New note</string>
+    <string name="annotations_note_title">Note</string>
+    <string name="annotations_note_hint">Write your note</string>
+    <string name="annotations_note_save">Save</string>
+    <string name="annotations_note_open">Open note</string>
+    <string name="annotations_note_icon_description">Note: %1$s</string>
+    <string name="annotations_note_icon_empty">Empty note</string>
+
+    <!-- Errors -->
+    <string name="annotations_error_load">Couldn\'t load annotations</string>
+    <string name="annotations_error_save">Couldn\'t save the annotation</string>
+    <string name="annotations_error_delete">Couldn\'t delete the annotation</string>
+    <string name="annotations_error_undo">Couldn\'t undo</string>
+
+    <!-- Export -->
+    <string name="annotations_export_error_password">This PDF is password protected. Saving an annotated copy of a protected PDF isn\'t supported.</string>
+    <string name="annotations_export_error_not_permitted">This PDF\'s permissions don\'t allow adding annotations.</string>
+    <string name="annotations_export_error_read">Couldn\'t read the original PDF.</string>
+    <string name="annotations_export_error_write">Couldn\'t write the annotated copy.</string>
+    <string name="annotations_export_error_memory">This document is too large to save with annotations.</string>
+</resources>
