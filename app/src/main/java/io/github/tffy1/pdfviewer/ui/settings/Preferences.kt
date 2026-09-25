@@ -92,8 +92,8 @@ fun ClickablePreference(
 ) {
     ListItem(
         headlineContent = { Text(title) },
-        supportingContent = if (summary == null) null else @Composable { Text(summary) },
-        leadingContent = if (icon == null) null else @Composable { Icon(icon, contentDescription = null) },
+        supportingContent = if (summary != null) { { Text(summary) } } else null,
+        leadingContent = if (icon != null) { { Icon(icon, contentDescription = null) } } else null,
         trailingContent = trailing,
         modifier = modifier.clickable(enabled = enabled, role = Role.Button, onClick = onClick),
     )
@@ -112,8 +112,8 @@ fun SwitchPreference(
 ) {
     ListItem(
         headlineContent = { Text(title) },
-        supportingContent = if (summary == null) null else @Composable { Text(summary) },
-        leadingContent = if (icon == null) null else @Composable { Icon(icon, contentDescription = null) },
+        supportingContent = if (summary != null) { { Text(summary) } } else null,
+        leadingContent = if (icon != null) { { Icon(icon, contentDescription = null) } } else null,
         trailingContent = { Switch(checked = checked, onCheckedChange = null, enabled = enabled) },
         modifier = modifier.toggleable(
             value = checked,
@@ -221,7 +221,7 @@ fun ConfirmDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        icon = if (icon == null) null else @Composable { Icon(icon, contentDescription = null) },
+        icon = if (icon != null) { { Icon(icon, contentDescription = null) } } else null,
         title = { Text(title) },
         text = { Text(message) },
         confirmButton = {
