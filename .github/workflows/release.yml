@@ -40,10 +40,10 @@ jobs:
       version_name: ${{ steps.version.outputs.version_name }}
       version_code: ${{ steps.version.outputs.version_code }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Validate Gradle wrapper
-        uses: gradle/actions/wrapper-validation@v5
+        uses: gradle/actions/wrapper-validation@v6
 
       - name: Check signing secrets
         env:
@@ -94,13 +94,13 @@ jobs:
           echo "version_name=$version" >> "$GITHUB_OUTPUT"
           echo "version_code=$code" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: 21
 
       # Release builds never read or write the shared Gradle cache (no cache poisoning).
-      - uses: gradle/actions/setup-gradle@v5
+      - uses: gradle/actions/setup-gradle@v6
         with:
           cache-disabled: true
 
@@ -171,14 +171,14 @@ jobs:
           (cd dist && sha256sum pdfviewer-* > SHA256SUMS.txt)
 
       - name: Upload AAB
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: release-aab
           path: dist/*.aab
           if-no-files-found: error
 
       - name: Upload APK
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: release-apk
           path: |
@@ -188,7 +188,7 @@ jobs:
 
       # Needed to deobfuscate crash reports for this exact build. Keep it with the release.
       - name: Upload R8 mapping
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: mapping
           path: dist/mapping-*.txt
@@ -209,12 +209,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           sparse-checkout: fastlane
 
       - name: Download APK
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: release-apk
           path: dist
@@ -231,7 +231,7 @@ jobs:
           fi
 
       - name: Create draft release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           draft: true
           name: PDF Viewer ${{ needs.build.outputs.version_name }}
