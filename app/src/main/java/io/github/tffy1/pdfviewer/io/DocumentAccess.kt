@@ -81,7 +81,13 @@ class DocumentAccess(private val context: Context) {
      */
     fun takePersistableReadPermission(uri: Uri): Boolean {
         if (uri.scheme != ContentResolver.SCHEME_CONTENT) return true
-        if (resolver.persistedUriPermissions.any { it.uri == uri && it.isReadPermission }) return true
+        val persisted = resolver.persistedUriPermissions
+        if (persisted.any { it.uri == uri && it.isReadPermission }) return true
+        // Documents inside a library folder are covered by the folder's (tree) grant.
+        val uriString = uri.toString()
+        if (persisted.any { it.isReadPermission && uriString.startsWith(it.uri.toString() + "/document/") }) {
+            return true
+        }
         return runCatching {
             resolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
             true

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Library (home screen): recents, favorites and folders. Owner: library feature. -->
+<resources>
+    <!-- Tabs -->
+    <string name="library_tab_recent">Recent</string>
+    <string name="library_tab_favorites">Favorites</string>
+    <string name="library_tab_folders">Folders</string>
+
+    <!-- Top bar -->
+    <string name="library_action_search">Search</string>
+    <string name="library_search_hint">Search PDFs</string>
+    <string name="library_action_close_search">Close search</string>
+    <string name="library_action_clear_search">Clear search</string>
+    <string name="library_action_sort">Sort</string>
+    <string name="library_sort_recent">Most recent</string>
+    <string name="library_sort_name">Name</string>
+    <string name="library_sort_size">Size</string>
+    <string name="library_action_clear_history">Clear history</string>
+    <string name="library_clear_history_title">Clear history?</string>
+    <string name="library_clear_history_message">All documents except favorites are removed from Recent. No files are deleted.</string>
+    <string name="library_clear_history_confirm">Clear</string>
+
+    <!-- Primary action -->
+    <string name="library_open_pdf">Open PDF</string>
+
+    <!-- Document rows -->
+    <string name="library_favorite">Favorite</string>
+    <string name="library_more_options_for">More options for %1$s</string>
+    <string name="library_remove_from_recents">Remove from recents</string>
+    <string name="library_reopen_hint">Reopen from file picker</string>
+    <string name="library_page_progress">Page %1$d of %2$d</string>
+    <string name="library_opened_just_now">Opened just now</string>
+    <string name="library_opened_ago">Opened %1$s</string>
+    <string name="library_modified_on">Modified %1$s</string>
+    <string name="library_loading">Loading library</string>
+
+    <!-- Empty states -->
+    <string name="library_empty_recent_title">No recent documents</string>
+    <string name="library_empty_recent_body">PDFs you open show up here, so you can pick up right where you left off.</string>
+    <string name="library_empty_favorites_title">No favorites yet</string>
+    <string name="library_empty_favorites_body">Tap the star next to a document to keep it here for quick access.</string>
+    <string name="library_empty_favorites_action">Browse recent</string>
+    <string name="library_empty_folders_title">Add your PDF folders</string>
+    <string name="library_empty_folders_body">Pick a folder and every PDF inside it, including subfolders, appears here. Your files stay where they are.</string>
+    <string name="library_empty_folder_title">No PDFs here</string>
+    <string name="library_empty_folder_body">This folder doesn\'t contain any PDFs yet. Pull down to scan it again.</string>
+    <string name="library_no_results_title">No matches</string>
+    <string name="library_no_results_body">No PDF names match “%1$s”.</string>
+
+    <!-- Folders -->
+    <string name="library_add_folder">Add folder</string>
+    <string name="library_back_to_folders">Back to folders</string>
+    <string name="library_results_in_folders">Results in all folders</string>
+    <string name="library_folder_scanning">Scanning…</string>
+    <string name="library_folder_access_lost">Access lost. Tap to grant it again.</string>
+    <string name="library_folder_unavailable">Folder unavailable</string>
+    <string name="library_folder_limit_reached">Showing the first %1$d PDFs</string>
+    <string name="library_folder_rescan">Scan again</string>
+    <string name="library_folder_remove">Remove from library</string>
+    <string name="library_folder_regrant">Grant access again</string>
+    <string name="library_folder_regrant_action">Grant access</string>
+    <plurals name="library_folder_pdf_count">
+        <item quantity="one">%d PDF</item>
+        <item quantity="other">%d PDFs</item>
+    </plurals>
+    <plurals name="library_folder_count">
+        <item quantity="one">%d folder</item>
+        <item quantity="other">%d folders</item>
+    </plurals>
+
+    <!-- Messages -->
+    <string name="library_msg_folder_added">Added “%1$s”</string>
+    <string name="library_msg_folder_already_added">“%1$s” is already in your library</string>
+    <string name="library_msg_folder_access_restored">Access restored for “%1$s”</string>
+    <string name="library_msg_folder_removed">Removed “%1$s” from the library</string>
+    <string name="library_msg_folder_access_lost">Lost access to “%1$s”</string>
+    <string name="library_msg_folder_unavailable">Couldn\'t scan “%1$s”</string>
+    <string name="library_msg_folder_limit">“%1$s” has too many PDFs. Showing the first %2$d.</string>
+    <string name="library_msg_folder_permission_failed">Couldn\'t keep access to that folder</string>
+    <string name="library_msg_removed_from_recents">Removed “%1$s” from recents</string>
+    <string name="library_msg_history_cleared">History cleared</string>
+    <string name="library_msg_no_picker">No app is available to pick files</string>
+    <string name="library_msg_share_failed">Couldn\'t share this document</string>
+</resources>
