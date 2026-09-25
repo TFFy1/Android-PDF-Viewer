@@ -1,0 +1,49 @@
+name: Preview APK
+
+# Publishes the latest debug build as a rolling "preview" pre-release so testers can
+# install it straight from a phone:
+# https://github.com/TFFy1/Android-PDF-Viewer/releases/download/preview/pdfviewer-preview.apk
+# Debug builds install side by side with the Play version (applicationId suffix ".debug").
+
+on:
+  push:
+    branches: [ "main", "claude/pdf-viewer-mobile-app-zrylyi" ]
+  workflow_dispatch:
+
+concurrency:
+  group: preview-apk
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Publish preview pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk pdfviewer-preview.apk
+          gh release delete preview --cleanup-tag --yes || true
+          gh release create preview pdfviewer-preview.apk \
+            --prerelease \
+            --target "$GITHUB_SHA" \
+            --title "Preview build (debug)" \
+            --notes "Latest debug build from \`${GITHUB_REF_NAME}\` at ${GITHUB_SHA::7}. For testing only; not the Play Store release."
