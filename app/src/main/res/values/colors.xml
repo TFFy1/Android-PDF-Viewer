@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="window_background">#FFFFFBFF</color>
+    <!-- Must match the Compose light color scheme background (ui/theme/Color.kt). -->
+    <color name="window_background">#FFFFF8F6</color>
+    <!-- Brand seed color; also the solid fallback behind the launcher icon. -->
     <color name="ic_launcher_background">#FFD93A2B</color>
+    <!-- Launch splash background (brand red in light mode, a deeper red at night). -->
+    <color name="splash_background">#FFD93A2B</color>
 </resources>

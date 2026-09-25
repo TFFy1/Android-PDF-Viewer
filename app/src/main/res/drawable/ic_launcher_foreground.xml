@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Placeholder; settings/theme agent owns the final icon. -->
+<!--
+  Adaptive icon foreground (also the splash icon): a page with a folded corner, two text lines
+  and a "PDF" label. Everything is drawn with paths (no font glyphs) and stays inside the 66dp
+  safe zone (radius 33 around 54,54).
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    <!-- Soft drop shadow under the page -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M40,32H62L74,44V77A3,3 0,0 1,71 80H40A3,3 0,0 1,37 77V35A3,3 0,0 1,40 32Z" />
+    <!-- Page -->
     <path
         android:fillColor="#FFFFFFFF"
-        android:pathData="M38,30h22l12,12v36a2,2 0,0 1,-2 2H38a2,2 0,0 1,-2 -2V32a2,2 0,0 1,2 -2z" />
+        android:pathData="M39,30H61L72,41V75A3,3 0,0 1,69 78H39A3,3 0,0 1,36 75V33A3,3 0,0 1,39 30Z" />
+    <!-- Folded corner -->
     <path
-        android:fillColor="#FFD93A2B"
-        android:pathData="M42,56h24v3H42zM42,63h24v3H42zM42,70h16v3H42z" />
+        android:fillColor="#FFF6C3BC"
+        android:pathData="M61,30V38A3,3 0,0 0,64 41H72Z" />
+    <!-- Text lines -->
+    <path
+        android:pathData="M42.5,38H54.5M42.5,44.5H65.5M42.5,73H58"
+        android:strokeWidth="3"
+        android:strokeColor="#FFF2B3AA"
+        android:strokeLineCap="round" />
+    <!-- Label, overlapping the left edge of the page like a file-type tag -->
+    <path
+        android:fillColor="#FF9E1A10"
+        android:pathData="M33,50H64A2.5,2.5 0,0 1,66.5 52.5V65.5A2.5,2.5 0,0 1,64 68H33A2.5,2.5 0,0 1,30.5 65.5V52.5A2.5,2.5 0,0 1,33 50Z" />
+    <!-- P, D and F drawn as strokes -->
+    <path
+        android:pathData="M35,63V55H38.5A2.5,2.5 0,0 1,38.5 60H35M45.5,55V63H47.5A4,4 0,0 0,51.5 59A4,4 0,0 0,47.5 55ZM62,55H56V63M56,59H60.5"
+        android:strokeWidth="2.4"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
 </vector>

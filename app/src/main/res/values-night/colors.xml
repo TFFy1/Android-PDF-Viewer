@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="window_background">#FF1C1B1F</color>
+    <!-- Must match the Compose dark color scheme background (ui/theme/Color.kt). -->
+    <color name="window_background">#FF1A1110</color>
+    <color name="splash_background">#FF8E1F14</color>
 </resources>
