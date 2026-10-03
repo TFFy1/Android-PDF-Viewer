@@ -3,7 +3,9 @@ package io.github.tffy1.pdfviewer.word
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Typeface
+import android.graphics.text.LineBreaker
 import android.graphics.pdf.PdfDocument
+import android.os.Build
 import android.text.Layout
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -192,14 +194,15 @@ class DocxPdfRenderer(
             DocxAlign.END -> Layout.Alignment.ALIGN_OPPOSITE
             else -> Layout.Alignment.ALIGN_NORMAL
         }
-        return StaticLayout.Builder.obtain(text, 0, text.length, TextPaint(BASE_PAINT), width.coerceAtLeast(1))
+        val builder = StaticLayout.Builder.obtain(text, 0, text.length, TextPaint(BASE_PAINT), width.coerceAtLeast(1))
             .setAlignment(alignment)
             .setLineSpacing(0f, 1.15f)
             .setIncludePad(false)
-            .setJustificationMode(
-                if (p.align == DocxAlign.JUSTIFY) Layout.JUSTIFICATION_MODE_INTER_WORD else Layout.JUSTIFICATION_MODE_NONE,
-            )
-            .build()
+        // Justified text needs the newer line breaker constants; older devices fall back to left-aligned.
+        if (p.align == DocxAlign.JUSTIFY && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            builder.setJustificationMode(LineBreaker.JUSTIFICATION_MODE_INTER_WORD)
+        }
+        return builder.build()
     }
 
     private companion object {
