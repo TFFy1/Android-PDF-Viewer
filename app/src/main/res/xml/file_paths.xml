@@ -2,4 +2,5 @@
 <paths>
     <cache-path name="shared" path="shared/" />
     <files-path name="exports" path="exports/" />
+    <files-path name="converted" path="converted/" />
 </paths>

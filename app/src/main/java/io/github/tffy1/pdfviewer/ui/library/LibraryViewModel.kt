@@ -22,6 +22,7 @@ import io.github.tffy1.pdfviewer.library.LibraryContent
 import io.github.tffy1.pdfviewer.library.assembleLibraryContent
 import io.github.tffy1.pdfviewer.library.catchingNonCancellation
 import io.github.tffy1.pdfviewer.pdf.ThumbnailStore
+import io.github.tffy1.pdfviewer.word.DocumentImporter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin
@@ -71,6 +72,7 @@ sealed interface LibraryMessage {
     data object FolderPermissionFailed : LibraryMessage
     data class RemovedFromRecents(val name: String) : LibraryMessage
     data object HistoryCleared : LibraryMessage
+    data object ConvertFailed : LibraryMessage
     data object GenericError : LibraryMessage
 }
 
@@ -80,6 +82,7 @@ class LibraryViewModel(
     private val library: LibraryRepository,
     private val settings: SettingsRepository,
     private val documentAccess: DocumentAccess,
+    private val documentImporter: DocumentImporter,
     private val thumbnailStore: ThumbnailStore,
     private val scanner: FolderScanner,
     private val savedStateHandle: SavedStateHandle,
@@ -173,7 +176,11 @@ class LibraryViewModel(
             withContext(Dispatchers.IO) {
                 catchingNonCancellation { documentAccess.takePersistableReadPermission(uri) }
             }
-            events.send(LibraryEvent.OpenDocument(uri))
+            // Word files are converted to PDF; PDFs are returned unchanged.
+            val result = catchingNonCancellation { documentImporter.prepareForViewing(uri) }
+            val openable = result.getOrNull()
+            if (openable != null) events.send(LibraryEvent.OpenDocument(openable))
+            else showMessage(LibraryMessage.ConvertFailed)
         }
     }
 

@@ -110,6 +110,7 @@ import io.github.tffy1.pdfviewer.library.DocumentItem
 import io.github.tffy1.pdfviewer.library.FolderItem
 import io.github.tffy1.pdfviewer.library.FolderScanState
 import io.github.tffy1.pdfviewer.library.FolderScanner
+import io.github.tffy1.pdfviewer.integration.PdfIntentRules
 import io.github.tffy1.pdfviewer.library.PDF_MIME_TYPE
 import io.github.tffy1.pdfviewer.library.catchingNonCancellation
 import kotlinx.coroutines.delay
@@ -138,6 +139,7 @@ fun LibraryScreen(onOpenDocument: (Uri) -> Unit, modifier: Modifier = Modifier) 
             library = container.libraryRepository,
             settings = container.settingsRepository,
             documentAccess = container.documentAccess,
+            documentImporter = container.documentImporter,
             thumbnailStore = container.thumbnailStore,
             scanner = FolderScanner(container.appContext),
             savedStateHandle = createSavedStateHandle(),
@@ -176,7 +178,7 @@ private fun LibraryContentScreen(
     }
     val pickDocument: () -> Unit = {
         try {
-            openDocumentLauncher.launch(arrayOf(PDF_MIME_TYPE))
+            openDocumentLauncher.launch(arrayOf(PDF_MIME_TYPE, PdfIntentRules.DOCX_MIME))
         } catch (e: ActivityNotFoundException) {
             showSnackbar(R.string.library_msg_no_picker)
         }
@@ -786,5 +788,6 @@ private fun LibraryMessage.text(context: Context): String = when (this) {
     LibraryMessage.FolderPermissionFailed -> context.getString(R.string.library_msg_folder_permission_failed)
     is LibraryMessage.RemovedFromRecents -> context.getString(R.string.library_msg_removed_from_recents, name)
     LibraryMessage.HistoryCleared -> context.getString(R.string.library_msg_history_cleared)
+    LibraryMessage.ConvertFailed -> context.getString(R.string.word_error_convert)
     LibraryMessage.GenericError -> context.getString(R.string.error_generic)
 }

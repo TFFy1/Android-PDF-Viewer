@@ -4,7 +4,8 @@
     <string name="integration_share_chooser_title">Share PDF</string>
     <string name="integration_open_with_chooser_title">Open with</string>
 
-    <string name="integration_error_unsupported_file">Can\'t open this file. Only PDF documents are supported.</string>
+    <string name="integration_error_unsupported_file">Can\'t open this file. Only PDF and Word (.docx) documents are supported.</string>
+    <string name="word_error_convert">Couldn\'t open this Word document. It may be damaged, or in the older .doc format. Save it as .docx and try again.</string>
     <string name="integration_error_no_access">The app no longer has access to this file. Open it again from its original location.</string>
     <string name="integration_error_no_app">No app found to handle this</string>
     <string name="integration_error_share">Couldn\'t share this file</string>

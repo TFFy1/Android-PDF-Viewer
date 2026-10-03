@@ -100,4 +100,22 @@ class PdfIntentRulesTest {
     fun `root or empty directory entries never match everything`() {
         assertFalse(PdfIntentRules.isInsideAnyDirectory("/storage/a.pdf", listOf("/", "")))
     }
+
+    @Test
+    fun `docx is recognised by mime type or by name when the type is generic`() {
+        val docx = PdfIntentRules.DOCX_MIME
+        assertTrue(PdfIntentRules.isAcceptableDocx(docx, { null }, { null }))
+        assertTrue(PdfIntentRules.isAcceptableDocx("application/octet-stream", { null }, { "Letter.DOCX" }))
+        assertTrue(PdfIntentRules.isAcceptableDocx(null, { docx }, { null }))
+        assertFalse(PdfIntentRules.isAcceptableDocx("application/octet-stream", { null }, { "Letter.doc" }))
+        assertFalse(PdfIntentRules.isAcceptableDocx("image/png", { null }, { "x.docx" }))
+        assertFalse(PdfIntentRules.isAcceptableDocx(null, { "text/plain" }, { "x.docx" }))
+    }
+
+    @Test
+    fun `documents are pdf or docx`() {
+        assertTrue(PdfIntentRules.isAcceptableDocument("application/pdf", { null }, { null }))
+        assertTrue(PdfIntentRules.isAcceptableDocument(PdfIntentRules.DOCX_MIME, { null }, { null }))
+        assertFalse(PdfIntentRules.isAcceptableDocument("application/zip", { null }, { "a.docx" }))
+    }
 }

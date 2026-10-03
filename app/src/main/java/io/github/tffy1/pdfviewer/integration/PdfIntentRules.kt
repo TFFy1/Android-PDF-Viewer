@@ -8,6 +8,7 @@ package io.github.tffy1.pdfviewer.integration
  */
 internal object PdfIntentRules {
     const val PDF_MIME = "application/pdf"
+    const val DOCX_MIME = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
     /** Real-world aliases some apps still use for PDF. */
     private val PDF_ALIASES = setOf(
@@ -50,6 +51,37 @@ internal object PdfIntentRules {
 
     fun hasPdfExtension(name: String?): Boolean =
         name != null && name.trim().endsWith(".pdf", ignoreCase = true)
+
+    fun hasDocxExtension(name: String?): Boolean =
+        name != null && name.trim().endsWith(".docx", ignoreCase = true)
+
+    private fun isDocxMime(mime: String?): Boolean =
+        mime?.substringBefore(';')?.trim()?.equals(DOCX_MIME, ignoreCase = true) == true
+
+    /**
+     * True for Word (.docx) files: the declared or resolved type is the DOCX type, or both types
+     * are generic and the display name ends with ".docx".
+     */
+    fun isAcceptableDocx(
+        declaredMime: String?,
+        resolvedMime: () -> String?,
+        displayName: () -> String?,
+    ): Boolean {
+        if (isDocxMime(declaredMime)) return true
+        if (classifyMime(declaredMime) == MimeKind.OTHER) return false
+        val resolved = resolvedMime()
+        if (isDocxMime(resolved)) return true
+        if (classifyMime(resolved) == MimeKind.OTHER) return false
+        return hasDocxExtension(displayName())
+    }
+
+    /** PDF or Word: what the app can open. */
+    fun isAcceptableDocument(
+        declaredMime: String?,
+        resolvedMime: () -> String?,
+        displayName: () -> String?,
+    ): Boolean = isAcceptablePdf(declaredMime, resolvedMime, displayName) ||
+        isAcceptableDocx(declaredMime, resolvedMime, displayName)
 
     /**
      * Accept when the declared or resolved type is PDF. When both are generic/unknown, accept

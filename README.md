@@ -22,6 +22,9 @@ _Screenshots coming soon._
 
 - **Open** from the file picker, "Open with" or "Share" from any app, your recents or library
   folders. Password-protected PDFs are supported.
+- **Word documents**: open `.docx` files too. They are converted to PDF on your device (text,
+  headings, bold/italic/underline, lists and tables; images are not rendered) and shown in the same
+  viewer. The older binary `.doc` format is not supported.
 - **Read** with continuous vertical scrolling or horizontal paging, pinch and double-tap zoom with
   sharp high-resolution tiles, page scrubber, go to page, outline/table of contents, thumbnails,
   internal and external links (external links ask first), night and sepia modes, fullscreen,
@@ -94,6 +97,7 @@ app/src/main/java/io/github/tffy1/pdfviewer/
 ├── data/                                      Room, DataStore, repositories
 ├── annotations/, library/                     annotation model/export, library logic
 ├── io/, integration/                          file access, intents, share, print
+├── word/                                      .docx parser and on-device Word-to-PDF conversion
 ├── tools/                                     merge/split/rotate/... (PdfBox)
 └── ui/                                        library, viewer, tools, settings, about, theme
 .github/        CI and release workflows, issue templates, Dependabot

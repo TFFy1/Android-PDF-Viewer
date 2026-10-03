@@ -13,16 +13,17 @@ import java.io.File
 /* CONTRACT (scaffold). Owner: Android-integration agent. */
 object IncomingIntents {
     /**
-     * Returns the PDF to open for a VIEW/SEND intent, or null if the intent isn't one.
+     * Returns the document (PDF or Word .docx) to open for a VIEW/SEND intent, or null if the
+     * intent isn't one. Word files are converted to PDF afterwards by [io.github.tffy1.pdfviewer.word.DocumentImporter].
      *
-     * Only content:// and file:// URIs that look like PDFs are accepted (see [PdfIntentRules]).
+     * Only content:// and file:// URIs that look like PDFs or .docx files are accepted (see [PdfIntentRules]).
      * file:// URIs pointing into this app's private data directory are always rejected so another
      * app cannot trick us into exposing our own files (confused deputy).
      *
      * When the intent *is* a VIEW/SEND request but the file is rejected, a short toast tells the
      * user why nothing opened. Never throws.
      */
-    fun extractPdfUri(context: Context, intent: Intent?): Uri? {
+    fun extractDocumentUri(context: Context, intent: Intent?): Uri? {
         if (intent == null) return null
         val action = intent.action
         if (action != Intent.ACTION_VIEW && action != Intent.ACTION_SEND) return null
@@ -60,7 +61,7 @@ object IncomingIntents {
             val canonical = canonicalPath(File(path)) ?: return false
             val privateDirs = privateDataDirs(context)
             if (PdfIntentRules.isInsideAnyDirectory(canonical, privateDirs)) return false
-            return PdfIntentRules.isAcceptablePdf(
+            return PdfIntentRules.isAcceptableDocument(
                 declaredMime = intent.type,
                 resolvedMime = { null },
                 displayName = { File(canonical).name },
@@ -68,7 +69,7 @@ object IncomingIntents {
         }
 
         val resolver = context.contentResolver
-        return PdfIntentRules.isAcceptablePdf(
+        return PdfIntentRules.isAcceptableDocument(
             declaredMime = intent.type,
             resolvedMime = { runCatching { resolver.getType(uri) }.getOrNull() },
             displayName = { queryDisplayName(resolver, uri) ?: uri.lastPathSegment },

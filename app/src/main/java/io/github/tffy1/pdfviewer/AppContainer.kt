@@ -11,6 +11,7 @@ import io.github.tffy1.pdfviewer.io.DocumentAccess
 import io.github.tffy1.pdfviewer.pdf.PdfEngine
 import io.github.tffy1.pdfviewer.pdf.ThumbnailStore
 import io.github.tffy1.pdfviewer.pdf.pdfium.PdfiumEngine
+import io.github.tffy1.pdfviewer.word.DocumentImporter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
@@ -29,6 +30,7 @@ class AppContainer(context: Context) {
     val libraryRepository by lazy { LibraryRepository(database.libraryDao()) }
 
     val documentAccess: DocumentAccess by lazy { DocumentAccess(appContext) }
+    val documentImporter: DocumentImporter by lazy { DocumentImporter(appContext, documentAccess) }
     val pdfEngine: PdfEngine by lazy { PdfiumEngine(appContext, documentAccess) }
     val thumbnailStore: ThumbnailStore by lazy { ThumbnailStore(appContext, pdfEngine) }
 }
