@@ -1,7 +1,7 @@
 [versions]
 androidGradlePlugin = "9.3.2"
-kotlin = "2.3.21"
-ksp = "2.3.12"
+kotlin = "2.4.21"
+ksp = "2.3.13"
 androidDesugarJdkLibs = "2.1.4"
 androidxActivity = "1.10.1"
 androidxComposeBom = "2025.09.01"
